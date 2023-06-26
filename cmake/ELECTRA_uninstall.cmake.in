@@ -1,0 +1,30 @@
+
+# Check if ELECTRA installation manifest exists in build directory.
+IF(NOT EXISTS "@CMAKE_CURRENT_BINARY_DIR@/install_manifest.txt")
+    MESSAGE(FATAL_ERROR "Cannot find install manifest: @CMAKE_CURRENT_BINARY_DIR@/install_manifest.txt")
+ENDIF()
+
+# Read the ELECTRA installation manifest.
+FILE(READ "@CMAKE_CURRENT_BINARY_DIR@/install_manifest.txt" ELECTRA_INSTALL_PATHS)
+
+# Replace ending new line characters from ELECTRA installation paths.
+STRING(REGEX  REPLACE  "\n"  ";"  ELECTRA_INSTALL_PATHS  "${ELECTRA_INSTALL_PATHS}")
+
+# Uninstall each file from the given path.
+FOREACH(electra_install_path ${ELECTRA_INSTALL_PATHS})
+  MESSAGE(STATUS "Uninstalling: $ENV{DESTDIR}${electra_install_path}")
+
+  IF(IS_SYMLINK  "$ENV{DESTDIR}${electra_install_path}"  OR  EXISTS  "$ENV{DESTDIR}${electra_install_path}")
+    EXEC_PROGRAM("@CMAKE_COMMAND@" ARGS "-E remove \"$ENV{DESTDIR}${electra_install_path}\""
+                 OUTPUT_VARIABLE rm_out  RETURN_VALUE rm_retval)
+
+    # Check if ELECTRA file was removed successfully from installation path.
+    IF(NOT "${rm_retval}" STREQUAL 0)
+      MESSAGE(FATAL_ERROR "Problem when removing $ENV{DESTDIR}${electra_install_path}")
+    ENDIF(NOT "${rm_retval}" STREQUAL 0)
+
+  ELSE(IS_SYMLINK  "$ENV{DESTDIR}${electra_install_path}"  OR  EXISTS  "$ENV{DESTDIR}${electra_install_path}")
+    MESSAGE(STATUS "File $ENV{DESTDIR}${electra_install_path} does not exist.")
+  ENDIF()
+
+ENDFOREACH(electra_install_path)

@@ -1,0 +1,24 @@
+/*
+ * ELECTRA. Electrophysiology Simulation Software.
+ * Copyright (C) 2019  <Konstantinos A. Mountris> <konstantinos.mountris@gmail.com>
+ *
+ * ALL RIGHTS RESERVED
+ *
+ */
+
+
+/**
+   \file Materials
+   \brief Header file collecting the header files of the various material classes.
+   \author Konstantinos A. Mountris
+   \date 08/03/2019
+*/
+
+#ifndef ELECTRA_MATERIALS_
+#define ELECTRA_MATERIALS_
+
+#include "ELECTRA/engine/materials/electric_basic.hpp"
+#include "ELECTRA/engine/materials/electric_factory.hpp"
+#include "ELECTRA/engine/materials/electric_transversal.hpp"
+
+#endif //ELECTRA_MATERIALS_

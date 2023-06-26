@@ -1,0 +1,23 @@
+/*
+ * ELECTRA. Electrophysiology Simulation Software.
+ * Copyright (C) 2019  <Konstantinos A. Mountris> <konstantinos.mountris@gmail.com>
+ *
+ * ALL RIGHTS RESERVED
+ *
+ */
+
+
+/**
+   \file Conditions
+   \brief Header file collecting the header files of the various boundary and body conditions to apply during models' solution.
+   \author Konstantinos A. Mountris
+   \date 18/03/2019
+*/
+
+#ifndef ELECTRA_CONDITIONS_
+#define ELECTRA_CONDITIONS_
+
+#include "ELECTRA/engine/conditions/body_loads/body_loads.hpp"
+#include "ELECTRA/engine/conditions/load_curve.hpp"
+
+#endif //ELECTRA_CONDITIONS_

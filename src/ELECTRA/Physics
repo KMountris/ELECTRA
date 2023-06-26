@@ -1,0 +1,26 @@
+/*
+ * ELECTRA. Electrophysiology Simulation Software.
+ * Copyright (C) 2019  <Konstantinos A. Mountris> <konstantinos.mountris@gmail.com>
+ *
+ * ALL RIGHTS RESERVED
+ *
+ */
+
+
+
+/**
+   \file Physics
+   \brief Header file collecting the header files of the various physics models.
+   \author Konstantinos A. Mountris
+   \date 15/03/2019
+*/
+
+#ifndef ELECTRA_PHYSICS_
+#define ELECTRA_PHYSICS_
+
+#include "ELECTRA/engine/physics/bidomain.hpp"
+#include "ELECTRA/engine/physics/monodomain.hpp"
+#include "ELECTRA/engine/physics/reaction_diffusion_factory.hpp"
+#include "ELECTRA/engine/physics/reaction_diffusion.hpp"
+
+#endif //ELECTRA_PHYSICS_

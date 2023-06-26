@@ -1,0 +1,33 @@
+# Commands to build and save the image
+
+x.y.z = the version of the software to build (e.g. x.y.z=0.1.0).
+
+# Build
+>> docker image build -t electra-docker:x.y.z .
+
+# Save
+>> docker save electra-docker:x.y.z | gzip > electra-docker_x.y.z.tar.gz
+
+# Locate image id
+docker images -a
+
+# Delete image
+docker rmi Image Image
+
+# List dangling images
+docker images -f dangling=true
+
+# Remove dangling images
+docker images purge
+
+# Remove all images
+docker rmi $(docker images -a -q)
+
+# List containers
+docker container ls -a
+
+# Remove container
+docker container rm cc3f2ff51cab cd20b396a061
+
+# Stop container
+docker container stop $(docker container ls -aq)

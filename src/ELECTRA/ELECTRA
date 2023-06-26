@@ -1,0 +1,35 @@
+/*
+ * ELECTRA. Electrophysiology Simulation Software.
+ * Copyright (C) 2019  <Konstantinos A. Mountris> <konstantinos.mountris@gmail.com>
+ *
+ * ALL RIGHTS RESERVED
+ *
+ */
+
+/**
+   \file Electra
+   \brief ELECTRA library header file. Should be included in a project to use the ELECTRA libraries.
+   \author Konstantinos A. Mountris
+   \date 07/03/2019
+*/
+
+#ifndef ELECTRA_ELECTRA_
+#define ELECTRA_ELECTRA_
+
+#include "ELECTRA/Conditions"
+#include "ELECTRA/ConductionSystem"
+#include "ELECTRA/Electrophysiology"
+#include "ELECTRA/Exporters"
+#include "ELECTRA/Fibers"
+#include "ELECTRA/Materials"
+#include "ELECTRA/Physics"
+#include "ELECTRA/PostProcess"
+#include "ELECTRA/Utilities"
+
+/**
+ * \namespace ELECTRA
+ * \brief Collects the functionality of ELECTRA library.
+ */
+namespace ELECTRA {}
+
+#endif //ELECTRA_ELECTRA_

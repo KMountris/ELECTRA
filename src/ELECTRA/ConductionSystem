@@ -1,0 +1,21 @@
+/*
+ * ELECTRA. Electrophysiology Simulation Software.
+ * Copyright (C) 2019  <Konstantinos A. Mountris> <konstantinos.mountris@gmail.com>
+ *
+ * ALL RIGHTS RESERVED
+ *
+ */
+
+/**
+   \file ConductionSystem
+   \brief Header file collecting the header files for the definition of a cardiac conduction system.
+   \author Konstantinos A. Mountris
+   \date 18/02/2020
+*/
+
+#ifndef ELECTRA_CONDUCTIONSYSTEM_
+#define ELECTRA_CONDUCTIONSYSTEM_
+
+#include "ELECTRA/engine/conduction_system/conduction_system.hpp"
+
+#endif //ELECTRA_CONDUCTIONSYSTEM_

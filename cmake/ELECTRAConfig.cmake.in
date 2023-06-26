@@ -1,0 +1,66 @@
+# - Config file for the ELECTRA package
+# It defines the following variables
+#  ELECTRA_INCLUDE_DIRS - include directories for ELECTRA
+#  ELECTRA_LIBRARY_DIRS - library directories for ELECTRA (normally not used!)
+#  ELECTRA_LIBRARIES    - libraries to link against
+
+@PACKAGE_INIT@
+
+unset(extraArgs)
+if(${CMAKE_FIND_PACKAGE_NAME}_FIND_QUIETLY)
+    list(APPEND extraArgs QUIET)
+endif()
+
+if(${CMAKE_FIND_PACKAGE_NAME}_FIND_REQUIRED)
+    list(APPEND extraArgs REQUIRED)
+endif()
+
+find_package(Eigen3 3.3 NO_MODULE ${extraArgs})
+find_package(Boost COMPONENTS system iostreams filesystem ${extraArgs})
+find_package(nlohmann_json 3.2.0 REQUIRED)
+
+include("${CMAKE_CURRENT_LIST_DIR}/electraUtilitiesTargets.cmake")
+include("${CMAKE_CURRENT_LIST_DIR}/electraSimulationTargets.cmake")
+include("${CMAKE_CURRENT_LIST_DIR}/electraPostProcessTargets.cmake")
+include("${CMAKE_CURRENT_LIST_DIR}/electraPhysicsTargets.cmake")
+include("${CMAKE_CURRENT_LIST_DIR}/electraMaterialsTargets.cmake")
+include("${CMAKE_CURRENT_LIST_DIR}/electraFibersTargets.cmake")
+include("${CMAKE_CURRENT_LIST_DIR}/electraExportersTargets.cmake")
+include("${CMAKE_CURRENT_LIST_DIR}/electraElectrophysiologyTargets.cmake")
+include("${CMAKE_CURRENT_LIST_DIR}/electraConductionSystemTargets.cmake")
+include("${CMAKE_CURRENT_LIST_DIR}/electraConditionsTargets.cmake")
+include("${CMAKE_CURRENT_LIST_DIR}/ELECTRATargets.cmake")
+
+
+check_required_components(
+    "electraUtilities"
+    "electraSimulation"
+    "electraPostProcess"
+    "electraPhysics"
+    "electraMaterials"
+    "electraFibers"
+    "electraExporters"
+    "Electrophysiology"
+    "electraConductionSystem"
+    "electraConditions"
+    "ELECTRA"
+)
+
+
+# Tell the user project where to find our headers and libraries
+set_and_check(ELECTRA_INCLUDE_DIR "@PACKAGE_INSTALL_INCLUDEDIR@")
+set_and_check(ELECTRA_LIBRARY_DIR "@PACKAGE_INSTALL_LIBDIR@")
+
+set(ELECTRA_INCLUDE_DIRS "${ELECTRA_INCLUDE_DIR}" CACHE PATH "The path to the directory that contains ELECTRA.hpp")
+set(ELECTRA_LIBRARY_DIRS "${ELECTRA_LIBRARY_DIR}" CACHE PATH "The path to the directory that contains the ELECTRA library")
+
+include(FindPackageHandleStandardArgs)
+find_library(ELECTRA_LIBRARY NAMES ELECTRA PATHS ${ELECTRA_LIBRARY_DIR})
+find_package_handle_standard_args(ELECTRA DEFAULT_MSG ELECTRA_LIBRARY)
+mark_as_advanced(ELECTRA_LIBRARY)
+if (ELECTRA_FOUND)
+set(ELECTRA_LIBRARIES ${ELECTRA_LIBRARY} CACHE PATH "The ELECTRA library")
+endif()
+
+add_definitions (${ELECTRA_DEFINITIONS})
+include_directories (${ELECTRA_INCLUDE_DIRS})

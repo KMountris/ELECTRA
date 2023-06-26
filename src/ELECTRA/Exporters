@@ -1,0 +1,27 @@
+/*
+ * ELECTRA. Electrophysiology Simulation Software.
+ * Copyright (C) 2019  <Konstantinos A. Mountris> <konstantinos.mountris@gmail.com>
+ *
+ * ALL RIGHTS RESERVED
+ *
+ */
+
+
+/**
+   \file Exporters
+   \brief Collection of exporters in different file formats.
+   \author Konstantinos A. Mountris
+   \date 01/04/2019
+*/
+
+#ifndef ELECTRA_EXPORTERS_
+#define ELECTRA_EXPORTERS_
+
+// Collection of exporters' header files for various post-processors.
+
+#include "ELECTRA/engine/exporters/ascii_exporter.hpp"
+#include "ELECTRA/engine/exporters/binary_exporter.hpp"
+#include "ELECTRA/engine/exporters/ensight_exporter.hpp"
+#include "ELECTRA/engine/exporters/paraview_exporter.hpp"
+
+#endif //ELECTRA_EXPORTERS_

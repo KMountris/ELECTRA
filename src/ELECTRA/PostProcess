@@ -1,0 +1,22 @@
+/*
+ * ELECTRA. Electrophysiology Simulation Software.
+ * Copyright (C) 2019  <Konstantinos A. Mountris> <konstantinos.mountris@gmail.com>
+ *
+ * ALL RIGHTS RESERVED
+ *
+ */
+
+
+/**
+   \file PostProcess
+   \brief Header file collecting the header files of the various post processing tools.
+   \author Konstantinos A. Mountris
+   \date 06/05/2019
+*/
+
+#ifndef ELECTRA_POST_PROCESS_
+#define ELECTRA_POST_PROCESS_
+
+#include "ELECTRA/engine/post_process/post_process.hpp"
+
+#endif //ELECTRA_POST_PROCESS_

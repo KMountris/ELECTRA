@@ -1,0 +1,35 @@
+/*
+ * ELECTRA. Electrophysiology Simulation Software.
+ * Copyright (C) 2019  <Konstantinos A. Mountris> <konstantinos.mountris@gmail.com>
+ *
+ * ALL RIGHTS RESERVED
+ *
+ */
+
+/**
+   \file Electrophysiology
+   \brief Header file collecting the header files of the various electrophysiology models.
+   \author Konstantinos A. Mountris
+   \date 13/03/2019
+*/
+
+#ifndef ELECTRA_ELECTROPHYSIOLOGY_
+#define ELECTRA_ELECTROPHYSIOLOGY_
+
+#include "ELECTRA/engine/electrophysiology/ep_basic.hpp"
+#include "ELECTRA/engine/electrophysiology/bueno.hpp"
+#include "ELECTRA/engine/electrophysiology/ohara.hpp"
+#include "ELECTRA/engine/electrophysiology/gaur2021.hpp"
+#include "ELECTRA/engine/electrophysiology/gong2020.hpp"
+#include "ELECTRA/engine/electrophysiology/gong2020m.hpp"
+#include "ELECTRA/engine/electrophysiology/courtemanche.hpp"
+#include "ELECTRA/engine/electrophysiology/grandi_atri.hpp"
+#include "ELECTRA/engine/electrophysiology/maleckar2009.hpp"
+#include "ELECTRA/engine/electrophysiology/maccannell.hpp"
+#include "ELECTRA/engine/electrophysiology/stewart.hpp"
+#include "ELECTRA/engine/electrophysiology/paci_ventri.hpp"
+#include "ELECTRA/engine/electrophysiology/tentusscher2006.hpp"
+#include "ELECTRA/engine/electrophysiology/ep_factory.hpp"
+#include "ELECTRA/engine/electrophysiology/ep_varying_params.hpp"
+
+#endif //ELECTRA_ELECTROPHYSIOLOGY_
